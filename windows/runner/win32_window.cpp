@@ -130,7 +130,7 @@ bool Win32Window::CreateAndShow(const std::wstring& title,
 }
 
 // static
-LRESULT CALLBACK Win32Window::WndProc(HWND const window,
+LQuestionModel CALLBACK Win32Window::WndProc(HWND const window,
                                       UINT const message,
                                       WPARAM const wparam,
                                       LPARAM const lparam) noexcept {
@@ -149,7 +149,7 @@ LRESULT CALLBACK Win32Window::WndProc(HWND const window,
   return DefWindowProc(window, message, wparam, lparam);
 }
 
-LRESULT
+LQuestionModel
 Win32Window::MessageHandler(HWND hwnd,
                             UINT const message,
                             WPARAM const wparam,
