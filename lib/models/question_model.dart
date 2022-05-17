@@ -20,7 +20,7 @@ abstract class QuestionModel with _$QuestionModel {
   const factory QuestionModel({
     required String category,
     @QuestionEnumConverter() required Type type,
-    required Difficulty difficulty,
+    @DifficultyEnumConverter() required Difficulty difficulty,
     required String question,
     required String correctAnswer,
     required List<String> incorrectAnswers,
@@ -46,5 +46,19 @@ class QuestionEnumConverter implements JsonConverter<Type?, String?> {
 
   @override
   String? toJson(Type? object) =>
+      object == null ? null : EnumToString.convertToString(object);
+}
+
+class DifficultyEnumConverter implements JsonConverter<Difficulty?, String?> {
+  const DifficultyEnumConverter();
+
+  @override
+  Difficulty? fromJson(String? json) => EnumToString.fromString(
+        Difficulty.values,
+        json ?? '',
+      );
+
+  @override
+  String? toJson(Difficulty? object) =>
       object == null ? null : EnumToString.convertToString(object);
 }

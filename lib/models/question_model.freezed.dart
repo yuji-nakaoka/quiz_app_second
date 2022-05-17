@@ -23,6 +23,7 @@ mixin _$QuestionModel {
   String get category => throw _privateConstructorUsedError;
   @QuestionEnumConverter()
   Type get type => throw _privateConstructorUsedError;
+  @DifficultyEnumConverter()
   Difficulty get difficulty => throw _privateConstructorUsedError;
   String get question => throw _privateConstructorUsedError;
   String get correctAnswer => throw _privateConstructorUsedError;
@@ -42,7 +43,7 @@ abstract class $QuestionModelCopyWith<$Res> {
   $Res call(
       {String category,
       @QuestionEnumConverter() Type type,
-      Difficulty difficulty,
+      @DifficultyEnumConverter() Difficulty difficulty,
       String question,
       String correctAnswer,
       List<String> incorrectAnswers});
@@ -105,7 +106,7 @@ abstract class _$$_QuestionModelCopyWith<$Res>
   $Res call(
       {String category,
       @QuestionEnumConverter() Type type,
-      Difficulty difficulty,
+      @DifficultyEnumConverter() Difficulty difficulty,
       String question,
       String correctAnswer,
       List<String> incorrectAnswers});
@@ -166,7 +167,7 @@ class _$_QuestionModel implements _QuestionModel {
   const _$_QuestionModel(
       {required this.category,
       @QuestionEnumConverter() required this.type,
-      required this.difficulty,
+      @DifficultyEnumConverter() required this.difficulty,
       required this.question,
       required this.correctAnswer,
       required final List<String> incorrectAnswers})
@@ -181,6 +182,7 @@ class _$_QuestionModel implements _QuestionModel {
   @QuestionEnumConverter()
   final Type type;
   @override
+  @DifficultyEnumConverter()
   final Difficulty difficulty;
   @override
   final String question;
@@ -240,7 +242,7 @@ abstract class _QuestionModel implements QuestionModel {
   const factory _QuestionModel(
       {required final String category,
       @QuestionEnumConverter() required final Type type,
-      required final Difficulty difficulty,
+      @DifficultyEnumConverter() required final Difficulty difficulty,
       required final String question,
       required final String correctAnswer,
       required final List<String> incorrectAnswers}) = _$_QuestionModel;
@@ -254,6 +256,7 @@ abstract class _QuestionModel implements QuestionModel {
   @QuestionEnumConverter()
   Type get type => throw _privateConstructorUsedError;
   @override
+  @DifficultyEnumConverter()
   Difficulty get difficulty => throw _privateConstructorUsedError;
   @override
   String get question => throw _privateConstructorUsedError;
