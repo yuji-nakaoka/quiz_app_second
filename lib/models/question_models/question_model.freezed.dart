@@ -20,14 +20,8 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuestionModel {
-  String get category => throw _privateConstructorUsedError;
-  @QuestionEnumConverter()
-  Type get type => throw _privateConstructorUsedError;
-  @DifficultyEnumConverter()
-  Difficulty get difficulty => throw _privateConstructorUsedError;
-  String get question => throw _privateConstructorUsedError;
-  String get correctAnswer => throw _privateConstructorUsedError;
-  List<String> get incorrectAnswers => throw _privateConstructorUsedError;
+  int get responseCode => throw _privateConstructorUsedError;
+  List<Result> get results => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +34,7 @@ abstract class $QuestionModelCopyWith<$Res> {
   factory $QuestionModelCopyWith(
           QuestionModel value, $Res Function(QuestionModel) then) =
       _$QuestionModelCopyWithImpl<$Res>;
-  $Res call(
-      {String category,
-      @QuestionEnumConverter() Type type,
-      @DifficultyEnumConverter() Difficulty difficulty,
-      String question,
-      String correctAnswer,
-      List<String> incorrectAnswers});
+  $Res call({int responseCode, List<Result> results});
 }
 
 /// @nodoc
@@ -57,6 +45,172 @@ class _$QuestionModelCopyWithImpl<$Res>
   final QuestionModel _value;
   // ignore: unused_field
   final $Res Function(QuestionModel) _then;
+
+  @override
+  $Res call({
+    Object? responseCode = freezed,
+    Object? results = freezed,
+  }) {
+    return _then(_value.copyWith(
+      responseCode: responseCode == freezed
+          ? _value.responseCode
+          : responseCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<Result>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_QuestionModelCopyWith<$Res>
+    implements $QuestionModelCopyWith<$Res> {
+  factory _$$_QuestionModelCopyWith(
+          _$_QuestionModel value, $Res Function(_$_QuestionModel) then) =
+      __$$_QuestionModelCopyWithImpl<$Res>;
+  @override
+  $Res call({int responseCode, List<Result> results});
+}
+
+/// @nodoc
+class __$$_QuestionModelCopyWithImpl<$Res>
+    extends _$QuestionModelCopyWithImpl<$Res>
+    implements _$$_QuestionModelCopyWith<$Res> {
+  __$$_QuestionModelCopyWithImpl(
+      _$_QuestionModel _value, $Res Function(_$_QuestionModel) _then)
+      : super(_value, (v) => _then(v as _$_QuestionModel));
+
+  @override
+  _$_QuestionModel get _value => super._value as _$_QuestionModel;
+
+  @override
+  $Res call({
+    Object? responseCode = freezed,
+    Object? results = freezed,
+  }) {
+    return _then(_$_QuestionModel(
+      responseCode: responseCode == freezed
+          ? _value.responseCode
+          : responseCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      results: results == freezed
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<Result>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_QuestionModel implements _QuestionModel {
+  const _$_QuestionModel(
+      {required this.responseCode, required final List<Result> results})
+      : _results = results;
+
+  factory _$_QuestionModel.fromJson(Map<String, dynamic> json) =>
+      _$$_QuestionModelFromJson(json);
+
+  @override
+  final int responseCode;
+  final List<Result> _results;
+  @override
+  List<Result> get results {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_results);
+  }
+
+  @override
+  String toString() {
+    return 'QuestionModel(responseCode: $responseCode, results: $results)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionModel &&
+            const DeepCollectionEquality()
+                .equals(other.responseCode, responseCode) &&
+            const DeepCollectionEquality().equals(other._results, _results));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(responseCode),
+      const DeepCollectionEquality().hash(_results));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_QuestionModelCopyWith<_$_QuestionModel> get copyWith =>
+      __$$_QuestionModelCopyWithImpl<_$_QuestionModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_QuestionModelToJson(this);
+  }
+}
+
+abstract class _QuestionModel implements QuestionModel {
+  const factory _QuestionModel(
+      {required final int responseCode,
+      required final List<Result> results}) = _$_QuestionModel;
+
+  factory _QuestionModel.fromJson(Map<String, dynamic> json) =
+      _$_QuestionModel.fromJson;
+
+  @override
+  int get responseCode => throw _privateConstructorUsedError;
+  @override
+  List<Result> get results => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_QuestionModelCopyWith<_$_QuestionModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Result _$ResultFromJson(Map<String, dynamic> json) {
+  return _Result.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Result {
+  String get category => throw _privateConstructorUsedError;
+  Type get type => throw _privateConstructorUsedError;
+  Difficulty get difficulty => throw _privateConstructorUsedError;
+  String get question => throw _privateConstructorUsedError;
+  String get correctAnswer => throw _privateConstructorUsedError;
+  List<String> get incorrectAnswers => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ResultCopyWith<Result> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResultCopyWith<$Res> {
+  factory $ResultCopyWith(Result value, $Res Function(Result) then) =
+      _$ResultCopyWithImpl<$Res>;
+  $Res call(
+      {String category,
+      Type type,
+      Difficulty difficulty,
+      String question,
+      String correctAnswer,
+      List<String> incorrectAnswers});
+}
+
+/// @nodoc
+class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
+  _$ResultCopyWithImpl(this._value, this._then);
+
+  final Result _value;
+  // ignore: unused_field
+  final $Res Function(Result) _then;
 
   @override
   $Res call({
@@ -97,31 +251,27 @@ class _$QuestionModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_QuestionModelCopyWith<$Res>
-    implements $QuestionModelCopyWith<$Res> {
-  factory _$$_QuestionModelCopyWith(
-          _$_QuestionModel value, $Res Function(_$_QuestionModel) then) =
-      __$$_QuestionModelCopyWithImpl<$Res>;
+abstract class _$$_ResultCopyWith<$Res> implements $ResultCopyWith<$Res> {
+  factory _$$_ResultCopyWith(_$_Result value, $Res Function(_$_Result) then) =
+      __$$_ResultCopyWithImpl<$Res>;
   @override
   $Res call(
       {String category,
-      @QuestionEnumConverter() Type type,
-      @DifficultyEnumConverter() Difficulty difficulty,
+      Type type,
+      Difficulty difficulty,
       String question,
       String correctAnswer,
       List<String> incorrectAnswers});
 }
 
 /// @nodoc
-class __$$_QuestionModelCopyWithImpl<$Res>
-    extends _$QuestionModelCopyWithImpl<$Res>
-    implements _$$_QuestionModelCopyWith<$Res> {
-  __$$_QuestionModelCopyWithImpl(
-      _$_QuestionModel _value, $Res Function(_$_QuestionModel) _then)
-      : super(_value, (v) => _then(v as _$_QuestionModel));
+class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
+    implements _$$_ResultCopyWith<$Res> {
+  __$$_ResultCopyWithImpl(_$_Result _value, $Res Function(_$_Result) _then)
+      : super(_value, (v) => _then(v as _$_Result));
 
   @override
-  _$_QuestionModel get _value => super._value as _$_QuestionModel;
+  _$_Result get _value => super._value as _$_Result;
 
   @override
   $Res call({
@@ -132,7 +282,7 @@ class __$$_QuestionModelCopyWithImpl<$Res>
     Object? correctAnswer = freezed,
     Object? incorrectAnswers = freezed,
   }) {
-    return _then(_$_QuestionModel(
+    return _then(_$_Result(
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -163,26 +313,24 @@ class __$$_QuestionModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_QuestionModel implements _QuestionModel {
-  const _$_QuestionModel(
+class _$_Result implements _Result {
+  const _$_Result(
       {required this.category,
-      @QuestionEnumConverter() required this.type,
-      @DifficultyEnumConverter() required this.difficulty,
+      required this.type,
+      required this.difficulty,
       required this.question,
       required this.correctAnswer,
       required final List<String> incorrectAnswers})
       : _incorrectAnswers = incorrectAnswers;
 
-  factory _$_QuestionModel.fromJson(Map<String, dynamic> json) =>
-      _$$_QuestionModelFromJson(json);
+  factory _$_Result.fromJson(Map<String, dynamic> json) =>
+      _$$_ResultFromJson(json);
 
   @override
   final String category;
   @override
-  @QuestionEnumConverter()
   final Type type;
   @override
-  @DifficultyEnumConverter()
   final Difficulty difficulty;
   @override
   final String question;
@@ -197,14 +345,14 @@ class _$_QuestionModel implements _QuestionModel {
 
   @override
   String toString() {
-    return 'QuestionModel(category: $category, type: $type, difficulty: $difficulty, question: $question, correctAnswer: $correctAnswer, incorrectAnswers: $incorrectAnswers)';
+    return 'Result(category: $category, type: $type, difficulty: $difficulty, question: $question, correctAnswer: $correctAnswer, incorrectAnswers: $incorrectAnswers)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionModel &&
+            other is _$_Result &&
             const DeepCollectionEquality().equals(other.category, category) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
@@ -229,34 +377,31 @@ class _$_QuestionModel implements _QuestionModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_QuestionModelCopyWith<_$_QuestionModel> get copyWith =>
-      __$$_QuestionModelCopyWithImpl<_$_QuestionModel>(this, _$identity);
+  _$$_ResultCopyWith<_$_Result> get copyWith =>
+      __$$_ResultCopyWithImpl<_$_Result>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QuestionModelToJson(this);
+    return _$$_ResultToJson(this);
   }
 }
 
-abstract class _QuestionModel implements QuestionModel {
-  const factory _QuestionModel(
+abstract class _Result implements Result {
+  const factory _Result(
       {required final String category,
-      @QuestionEnumConverter() required final Type type,
-      @DifficultyEnumConverter() required final Difficulty difficulty,
+      required final Type type,
+      required final Difficulty difficulty,
       required final String question,
       required final String correctAnswer,
-      required final List<String> incorrectAnswers}) = _$_QuestionModel;
+      required final List<String> incorrectAnswers}) = _$_Result;
 
-  factory _QuestionModel.fromJson(Map<String, dynamic> json) =
-      _$_QuestionModel.fromJson;
+  factory _Result.fromJson(Map<String, dynamic> json) = _$_Result.fromJson;
 
   @override
   String get category => throw _privateConstructorUsedError;
   @override
-  @QuestionEnumConverter()
   Type get type => throw _privateConstructorUsedError;
   @override
-  @DifficultyEnumConverter()
   Difficulty get difficulty => throw _privateConstructorUsedError;
   @override
   String get question => throw _privateConstructorUsedError;
@@ -266,6 +411,6 @@ abstract class _QuestionModel implements QuestionModel {
   List<String> get incorrectAnswers => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionModelCopyWith<_$_QuestionModel> get copyWith =>
+  _$$_ResultCopyWith<_$_Result> get copyWith =>
       throw _privateConstructorUsedError;
 }

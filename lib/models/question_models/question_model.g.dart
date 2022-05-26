@@ -8,6 +8,19 @@ part of 'question_model.dart';
 
 _$_QuestionModel _$$_QuestionModelFromJson(Map<String, dynamic> json) =>
     _$_QuestionModel(
+      responseCode: json['responseCode'] as int,
+      results: (json['results'] as List<dynamic>)
+          .map((e) => Result.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_QuestionModelToJson(_$_QuestionModel instance) =>
+    <String, dynamic>{
+      'responseCode': instance.responseCode,
+      'results': instance.results,
+    };
+
+_$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
       category: json['category'] as String,
       type: $enumDecode(_$TypeEnumMap, json['type']),
       difficulty: $enumDecode(_$DifficultyEnumMap, json['difficulty']),
@@ -18,8 +31,7 @@ _$_QuestionModel _$$_QuestionModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_QuestionModelToJson(_$_QuestionModel instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_ResultToJson(_$_Result instance) => <String, dynamic>{
       'category': instance.category,
       'type': _$TypeEnumMap[instance.type],
       'difficulty': _$DifficultyEnumMap[instance.difficulty],
@@ -29,12 +41,12 @@ Map<String, dynamic> _$$_QuestionModelToJson(_$_QuestionModel instance) =>
     };
 
 const _$TypeEnumMap = {
-  Type.multiple: 'multiple',
+  Type.MULTIPLE: 'MULTIPLE',
 };
 
 const _$DifficultyEnumMap = {
-  Difficulty.any: 'any',
-  Difficulty.easy: 'easy',
-  Difficulty.medium: 'medium',
-  Difficulty.hard: 'hard',
+  Difficulty.ANY: 'ANY',
+  Difficulty.EASY: 'EASY',
+  Difficulty.MEDIUM: 'MEDIUM',
+  Difficulty.HARD: 'HARD',
 };
