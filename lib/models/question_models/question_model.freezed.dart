@@ -180,7 +180,6 @@ Result _$ResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Result {
   String get category => throw _privateConstructorUsedError;
-  Type get type => throw _privateConstructorUsedError;
   Difficulty get difficulty => throw _privateConstructorUsedError;
   String get question => throw _privateConstructorUsedError;
   String get correctAnswer => throw _privateConstructorUsedError;
@@ -197,7 +196,6 @@ abstract class $ResultCopyWith<$Res> {
       _$ResultCopyWithImpl<$Res>;
   $Res call(
       {String category,
-      Type type,
       Difficulty difficulty,
       String question,
       String correctAnswer,
@@ -215,7 +213,6 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
   @override
   $Res call({
     Object? category = freezed,
-    Object? type = freezed,
     Object? difficulty = freezed,
     Object? question = freezed,
     Object? correctAnswer = freezed,
@@ -226,10 +223,6 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as Type,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -257,7 +250,6 @@ abstract class _$$_ResultCopyWith<$Res> implements $ResultCopyWith<$Res> {
   @override
   $Res call(
       {String category,
-      Type type,
       Difficulty difficulty,
       String question,
       String correctAnswer,
@@ -276,7 +268,6 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
   @override
   $Res call({
     Object? category = freezed,
-    Object? type = freezed,
     Object? difficulty = freezed,
     Object? question = freezed,
     Object? correctAnswer = freezed,
@@ -287,10 +278,6 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as Type,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -316,7 +303,6 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
 class _$_Result implements _Result {
   const _$_Result(
       {required this.category,
-      required this.type,
       required this.difficulty,
       required this.question,
       required this.correctAnswer,
@@ -328,8 +314,6 @@ class _$_Result implements _Result {
 
   @override
   final String category;
-  @override
-  final Type type;
   @override
   final Difficulty difficulty;
   @override
@@ -345,7 +329,7 @@ class _$_Result implements _Result {
 
   @override
   String toString() {
-    return 'Result(category: $category, type: $type, difficulty: $difficulty, question: $question, correctAnswer: $correctAnswer, incorrectAnswers: $incorrectAnswers)';
+    return 'Result(category: $category, difficulty: $difficulty, question: $question, correctAnswer: $correctAnswer, incorrectAnswers: $incorrectAnswers)';
   }
 
   @override
@@ -354,7 +338,6 @@ class _$_Result implements _Result {
         (other.runtimeType == runtimeType &&
             other is _$_Result &&
             const DeepCollectionEquality().equals(other.category, category) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
                 .equals(other.difficulty, difficulty) &&
             const DeepCollectionEquality().equals(other.question, question) &&
@@ -369,7 +352,6 @@ class _$_Result implements _Result {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(category),
-      const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(difficulty),
       const DeepCollectionEquality().hash(question),
       const DeepCollectionEquality().hash(correctAnswer),
@@ -389,7 +371,6 @@ class _$_Result implements _Result {
 abstract class _Result implements Result {
   const factory _Result(
       {required final String category,
-      required final Type type,
       required final Difficulty difficulty,
       required final String question,
       required final String correctAnswer,
@@ -399,8 +380,6 @@ abstract class _Result implements Result {
 
   @override
   String get category => throw _privateConstructorUsedError;
-  @override
-  Type get type => throw _privateConstructorUsedError;
   @override
   Difficulty get difficulty => throw _privateConstructorUsedError;
   @override

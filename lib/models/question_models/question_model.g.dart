@@ -22,7 +22,6 @@ Map<String, dynamic> _$$_QuestionModelToJson(_$_QuestionModel instance) =>
 
 _$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
       category: json['category'] as String,
-      type: $enumDecode(_$TypeEnumMap, json['type']),
       difficulty: $enumDecode(_$DifficultyEnumMap, json['difficulty']),
       question: json['question'] as String,
       correctAnswer: json['correctAnswer'] as String,
@@ -33,16 +32,11 @@ _$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
 
 Map<String, dynamic> _$$_ResultToJson(_$_Result instance) => <String, dynamic>{
       'category': instance.category,
-      'type': _$TypeEnumMap[instance.type],
       'difficulty': _$DifficultyEnumMap[instance.difficulty],
       'question': instance.question,
       'correctAnswer': instance.correctAnswer,
       'incorrectAnswers': instance.incorrectAnswers,
     };
-
-const _$TypeEnumMap = {
-  Type.MULTIPLE: 'MULTIPLE',
-};
 
 const _$DifficultyEnumMap = {
   Difficulty.ANY: 'ANY',

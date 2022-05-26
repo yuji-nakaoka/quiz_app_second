@@ -29,7 +29,6 @@ abstract class QuestionModel with _$QuestionModel {
 abstract class Result with _$Result {
   const factory Result({
     required String category,
-    required Type type,
     required Difficulty difficulty,
     required String question,
     required String correctAnswer,
@@ -37,6 +36,18 @@ abstract class Result with _$Result {
   }) = _Result;
 
   factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+
+  static Result fromMap(Map<String, dynamic> map) {
+    return Result(
+      category: map['category'] ?? '',
+      difficulty: map['difficulty'] ?? '',
+      question: map['question'] ?? '',
+      correctAnswer: map['correct_answer'] ?? '',
+      incorrectAnswers: List<String>.from(map['incorrect_answers'] ?? [])
+        ..add(map['correct_answer'] ?? '')
+        ..shuffle(),
+    );
+  }
 }
 
 enum Difficulty { ANY, EASY, MEDIUM, HARD }
